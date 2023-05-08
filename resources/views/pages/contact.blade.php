@@ -7,6 +7,6 @@
     </head>
 
     <body>
-
+        a
     </body>
 @endsection

@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="resouces/css/app.css">
+
+    <title>{{ ucfirst(Route::currentRouteName())}}</title>
 </head>
 
 <body class="h-screen flex flex-col">
-    @include('components.navbar')
-    @yield('content')
-    @include('components.footer')
+    @include('layouts.navbar')
+    <div class="my-3 w-full h-full">
+        @yield('content')
+    </div>
+    <div class="mt-auto">
+        @include('layouts.footer')
+    </div>
 </body>
 
 </html>
