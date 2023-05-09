@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -11,21 +11,8 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        $blogs = [
-            [
-                'title' => 'Title 1',
-                'body' => 'Body'
-            ],
-            [
-                'title' => 'Title 2',
-                'body' => 'Body'
-            ],
-            [
-                'title' => 'Title 3',
-                'body' => 'Body'
-            ]
-        ];
+        $posts = Post::all();
 
-        return view('pages.home', compact('blogs'));
+        return view('pages.home', compact('posts'));
     }
 }

@@ -1,18 +1,20 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="w-full h-full flex flex-row flex-wrap align-middle justify-center">
-        @foreach($blogs as $blog)
-            <div class="my-5 mx-3 w-48 h-48 rounded overflow-hidden shadow-lg shadow-gray-400 flex flex-row justify-center">
-                <div class="px-6 y-4">
-                    <div class="font-bold text-xl mb-2">
-                        {{$blog['title']}}
+    <div class="w-6/12 h-full flex flex-row flex-wrap align-middle content-center mx-auto my-12 gap-5">
+        @if($posts != null)
+            @foreach($posts as $post)
+                <div class="w-48 min-h-48 overflow-hidden border-2 border-gray-200 rounded-lg p-4 flex flex-row justify-center">
+                    <div class="px-6 y-4">
+                        <div class="font-bold text-xl mb-2">
+                            {{$post->title}}
+                        </div>
+                        <p class="text-gray-700 text-base mb-4">
+                            {{$post->description}}
+                        </p>
                     </div>
-                    <p class="text-gray-700 text-base">
-                        {{$blog['body']}}
-                    </p>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        @endif
     </div>
 @endsection

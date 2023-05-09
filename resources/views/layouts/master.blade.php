@@ -11,7 +11,7 @@
     <title>{{ ucfirst(Route::currentRouteName())}}</title>
 </head>
 
-<body class="h-screen flex flex-col">
+<body class="h-100 min-h-screen flex flex-col">
     @include('layouts.navbar')
     <div class="my-3 w-full h-full">
         @yield('content')

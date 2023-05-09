@@ -32,4 +32,13 @@ class LoginRequest extends FormRequest
                 ]
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'username.required' => 'O campo de usuário precisa ser preenchido!',
+            'email.required' => 'O campo de email precisa ser preenchido!',
+            'password.required' => 'O campo da senha precisa ser preenchido!',
+        ];
+    }
 }
