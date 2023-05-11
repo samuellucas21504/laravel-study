@@ -17,4 +17,9 @@ class Post extends Model
         'publish_date',
         'views'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

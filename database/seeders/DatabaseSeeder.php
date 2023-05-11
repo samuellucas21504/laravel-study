@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Address;
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
         Post::factory(200)->create();
         User::factory(100)->create();
         Address::factory(100)->create();
+        Category::factory(4)->create();
     }
 }
