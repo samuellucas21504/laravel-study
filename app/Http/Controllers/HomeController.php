@@ -12,15 +12,8 @@ class HomeController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        if($request->has('category_id')){
-            $posts = Category::get($request->input('category_id'));
-        }
-        else{
-            $posts = Post::all();
-        }
-
-        return view('pages.home', compact('posts'));
+        return view('pages.home');
     }
 }
