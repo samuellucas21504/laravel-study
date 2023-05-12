@@ -23,14 +23,19 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('about', [AboutController::class, 'index'])->name('about');
 
-Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::prefix('login')->group(function() {
+    Route::get('/', [LoginController::class, 'index'])->name('login');
 
-Route::post('login', [LoginController::class, 'handleLogin'])->name('login.submit');
+    Route::post('/', [LoginController::class, 'handleLogin'])->name('login.submit');
+});
 
-Route::post('upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+Route::prefix('image')->group(function() {
+    Route::get('/{name}', [ImageController::class, 'retrieveImage'])->name('retrieve-image');
+    Route::post('/', [ImageController::class, 'uploadImage'])->name('upload-image');
+});
 
 Route::prefix('contact')->group(function () {
-    Route::get('/', [ContactController::class, 'index'])
+    Route::get('/',  [ContactController::class, 'index'])
     ->name('contact');
 
     Route::get('/{id}', function(string $id) {

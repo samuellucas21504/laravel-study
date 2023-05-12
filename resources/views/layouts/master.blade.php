@@ -13,9 +13,9 @@
 
 <body class="h-100 min-h-screen flex flex-col">
     @include('layouts.navbar')
-    <div class="my-3 w-full h-full">
-        @yield('content')
-    </div>
+
+    @yield('content')
+
     <div class="mt-auto">
         @include('layouts.footer')
     </div>
