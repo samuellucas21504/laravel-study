@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        About
+        <x-form />
 
     </body>
 @endsection

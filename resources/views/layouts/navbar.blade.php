@@ -45,6 +45,12 @@
                     ])>Contact</a>
                 </li>
                 <li>
+                    <a href={{ route('posts') }} @class([
+                        $selectedClassStyle => $currentRoute == 'posts',
+                        $defaultClassStyles,
+                    ])>Posts</a>
+                </li>
+                <li>
                     <a href={{ route('login') }} @class([
                         $selectedClassStyle => $currentRoute == 'login',
                         $defaultClassStyles,

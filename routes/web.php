@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,13 @@ Route::prefix('contact')->group(function () {
         ->whereNumber('id')
         ->name('edit-contact');
 });
+
+Route::prefix('posts')->group(function () {
+    Route::get('/', [PostController::class, 'index'])->name('posts');
+    Route::get('/{sluggable}', [PostController::class, 'retrieve'])->name('post');
+});
+
+
 
 Route::resource('blog', BlogController::class);
 

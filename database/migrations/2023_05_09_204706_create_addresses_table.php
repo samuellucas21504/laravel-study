@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('address', 255);
-            $table->unsignedInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 
